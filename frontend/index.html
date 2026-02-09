@@ -60,10 +60,9 @@ document.getElementById('subscriptionForm').addEventListener('submit', async fun
   
   try {
     // Determine API endpoint based on current location
-    const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    const apiUrl = window.location.hostname === 'localhost'
       ? 'http://localhost:5000/subscribe'
       : '/subscribe';
-    
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
